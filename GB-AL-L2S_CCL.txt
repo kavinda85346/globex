@@ -1,0 +1,15 @@
+//Startup configuration
+enable
+configure terminal
+hostname GB-AL-L2S_CCL
+
+//vlan configuration
+GB-AL-L2S_CCL(config-vlan)#name security
+GB-AL-L2S_CCL(config-vlan)#vlan 16
+GB-AL-L2S_CCL(config-vlan)#name it
+GB-AL-L2S_CCL(config-vlan)#vlan 24
+GB-AL-L2S_CCL(config-vlan)#name finance
+GB-AL-L2S_CCL(config-vlan)#vlan 32
+GB-AL-L2S_CCL(config-vlan)#name hr
+
+
