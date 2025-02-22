@@ -1,0 +1,31 @@
+//Startup Configuration
+Router>enable
+Router#configure terminal
+Router(config)#hostname GB-AL-R_CCL
+
+//Subinterface Configuration
+GB-AL-R_CCL(config)#interface gigabitEthernet 4/0.8
+GB-AL-R_CCL(config-subif)#ip address 192.168.84.14 255.255.255.240
+GB-AL-R_CCL(config-subif)#encapsulation dot1Q 8
+GB-AL-R_CCL(config-subif)#description security vlan
+GB-AL-R_CCL(config-subif)#interface gigabitEthernet 4/0.16
+GB-AL-R_CCL(config-subif)#encapsulation dot1Q 16
+GB-AL-R_CCL(config-subif)#ip address 192.168.84.22 255.255.255.248
+GB-AL-R_CCL(config-subif)#description it vlan
+GB-AL-R_CCL(config-subif)#interface gigabitEthernet 4/0.24
+GB-AL-R_CCL(config-subif)#encapsulation dot1Q 24
+GB-AL-R_CCL(config-subif)#ip address 192.168.84.30 255.255.255.248
+GB-AL-R_CCL(config-subif)#description finance vlan
+GB-AL-R_CCL(config-subif)#exit
+GB-AL-R_CCL(config)#interface gigabitEthernet 5/0.32
+GB-AL-R_CCL(config-subif)#encapsulation dot1Q 32
+GB-AL-R_CCL(config-subif)#ip address 192.168.84.34 255.255.255.252
+GB-AL-R_CCL(config-subif)#description hr vlan
+GB-AL-R_CCL(config-subif)#interface gigabitEthernet 5/0.36
+GB-AL-R_CCL(config-subif)#encapsulation dot1Q 36
+GB-AL-R_CCL(config-subif)#ip address 192.168.84.38 255.255.255.252
+GB-AL-R_CCL(config-subif)#description management vlan
+GB-AL-R_CCL(config-subif)#interface gigabitEthernet 5/0.40
+GB-AL-R_CCL(config-subif)#encapsulation dot1Q 40 native
+GB-AL-R_CCL(config-subif)#description native vlan
+

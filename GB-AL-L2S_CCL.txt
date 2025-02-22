@@ -1,15 +1,52 @@
-//Startup configuration
-enable
-configure terminal
-hostname GB-AL-L2S_CCL
+//Startup Configuration
+Switch>enable
+Switch#configure terminal
+Switch(config)#hostname GB-AL-L2S_CCL_AL
 
-//vlan configuration
-GB-AL-L2S_CCL(config-vlan)#name security
-GB-AL-L2S_CCL(config-vlan)#vlan 16
-GB-AL-L2S_CCL(config-vlan)#name it
-GB-AL-L2S_CCL(config-vlan)#vlan 24
-GB-AL-L2S_CCL(config-vlan)#name finance
-GB-AL-L2S_CCL(config-vlan)#vlan 32
-GB-AL-L2S_CCL(config-vlan)#name hr
+//Vlan Configuration
+GB-AL-L2S_CCL_AL(config)#vlan 8
+GB-AL-L2S_CCL_AL(config-vlan)#name security
+GB-AL-L2S_CCL_AL(config-vlan)#vlan 16
+GB-AL-L2S_CCL_AL(config-vlan)#name it
+GB-AL-L2S_CCL_AL(config-vlan)#vlan 24
+GB-AL-L2S_CCL_AL(config-vlan)#name finance
+GB-AL-L2S_CCL_AL(config-vlan)#vlan 32
+GB-AL-L2S_CCL_AL(config-vlan)#name hr
+GB-AL-L2S_CCL_AL(config-vlan)#vlan 36
+GB-AL-L2S_CCL_AL(config-vlan)#name management
+GB-AL-L2S_CCL_AL(config-vlan)#vlan 40
+GB-AL-L2S_CCL_AL(config-vlan)#name native
+
+//Switchports VLAN Assignment
+GB-AL-L2S_CCL_AL(config)#interface fastEthernet 0/1
+GB-AL-L2S_CCL_AL(config-if)#switchport mode access
+GB-AL-L2S_CCL_AL(config-if)#switchport access vlan 8
+GB-AL-L2S_CCL_AL(config-if)#exit
+GB-AL-L2S_CCL_AL(config)#interface fastEthernet 0/2
+GB-AL-L2S_CCL_AL(config-if)#switchport mode access
+GB-AL-L2S_CCL_AL(config-if)#switchport access vlan 16
+GB-AL-L2S_CCL_AL(config-if)#exit
+GB-AL-L2S_CCL_AL(config)#interface fastEthernet 0/3
+GB-AL-L2S_CCL_AL(config-if)#switchport mode access
+GB-AL-L2S_CCL_AL(config-if)#switchport access vlan 24
+GB-AL-L2S_CCL_AL(config-if)#exit
+GB-AL-L2S_CCL_AL(config)#interface fastEthernet 0/4
+GB-AL-L2S_CCL_AL(config-if)#switchport mode access
+GB-AL-L2S_CCL_AL(config-if)#switchport access vlan 32
+GB-AL-L2S_CCL_AL(config-if)#exit
+GB-AL-L2S_CCL_AL(config)#interface fastEthernet 0/5
+GB-AL-L2S_CCL_AL(config-if)#switchport mode access
+GB-AL-L2S_CCL_AL(config-if)#switchport access vlan 36
+GB-AL-L2S_CCL_AL(config)#interface range fastEthernet 0/6-24
+GB-AL-L2S_CCL_AL(config-if)#switchport mode access
+GB-AL-L2S_CCL_AL(config-if)#switchport access vlan 40
+
+//Trunk Configuration
+GB-AL-L2S_CCL_AL(config)#interface range gigabitEthernet 0/1-2
+GB-AL-L2S_CCL_AL(config-if-range)#switchport mode trunk
+GB-AL-L2S_CCL_AL(config-if-range)#switchport trunk native vlan 40
+GB-AL-L2S_CCL_AL(config-if-range)#switchport trunk allowed vlan 8-40
+GB-AL-L2S_CCL_AL(config-if-range)#switchport nonegotiate
+
 
 
