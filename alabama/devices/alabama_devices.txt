@@ -1,0 +1,4 @@
+\\Globex Alabama Infrastructure Devices
+GB-AL-R_CCL:- Globex Alabama Router Switch Collapsed Core Layer
+GB-AL-L2S_CCL:- Globex Alabama Layer 2 Switch 1 Collapsed Core Layer
+GB-AL-L2S_CCL:- Globex Alabama Layer 2 Switch 2 Collapsed Core Layer

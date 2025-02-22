@@ -1,0 +1,4 @@
+\\Globex New Infrastructure Devices
+GB-AL-R_CCL:- Globex New York Router Collapsed Core Layer
+GB-AL-L2S_CCL:- Globex New York Layer 3 Switch 1 Collapsed Core Layer
+GB-AL-L2S_CCL:- Globex New York Layer 3 Switch 2 Collapsed Core Layer

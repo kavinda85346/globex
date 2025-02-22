@@ -29,3 +29,33 @@ GB-AL-R_CCL(config-subif)#interface gigabitEthernet 5/0.40
 GB-AL-R_CCL(config-subif)#encapsulation dot1Q 40 native
 GB-AL-R_CCL(config-subif)#description native vlan
 
+//DHCP Pool Configuration
+GB-AL-R_CCL(config)#ip dhcp excluded-address 192.168.84.14
+GB-AL-R_CCL(config)#ip dhcp excluded-address 192.168.84.22
+GB-AL-R_CCL(config)#ip dhcp excluded-address 192.168.84.30
+GB-AL-R_CCL(config)#ip dhcp excluded-address 192.168.84.34
+GB-AL-R_CCL(config)#ip dhcp excluded-address 192.168.84.38
+GB-AL-R_CCL(config)#ip dhcp pool security
+GB-AL-R_CCL(dhcp-config)#network 192.168.84.0 255.255.255.240
+GB-AL-R_CCL(dhcp-config)#default-router 192.168.84.14
+GB-AL-R_CCL(dhcp-config)#ip dhcp pool it
+GB-AL-R_CCL(dhcp-config)#network 192.168.84.16 255.255.255.248
+GB-AL-R_CCL(dhcp-config)#default-router 192.168.84.22
+GB-AL-R_CCL(dhcp-config)#ip dhcp pool finance
+GB-AL-R_CCL(dhcp-config)#network 192.168.84.24 255.255.255.248
+GB-AL-R_CCL(dhcp-config)#default-router 192.168.84.30
+GB-AL-R_CCL(dhcp-config)#ip dhcp pool hr
+GB-AL-R_CCL(dhcp-config)#network 192.168.84.32 255.255.255.252
+GB-AL-R_CCL(dhcp-config)#default-router 192.168.84.34
+GB-AL-R_CCL(dhcp-config)#ip dhcp pool management
+GB-AL-R_CCL(dhcp-config)#network 192.168.84.36 255.255.255.252
+GB-AL-R_CCL(dhcp-config)#default-router 192.168.84.38
+
+\\Activating the interface
+GB-AL-R_CCL(config)#interface gigabitEthernet 4/0
+GB-AL-R_CCL(config-if)#no shutdown 
+GB-AL-R_CCL(config-if)#exit
+GB-AL-R_CCL(config)#interface gigabitEthernet 5/0
+GB-AL-R_CCL(config-if)#no shutdown
+
+

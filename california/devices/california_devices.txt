@@ -1,0 +1,8 @@
+\\Globex California Infrastructure Devices
+GB-CA-R_CL:- Globex California Router Core Layer
+GB-CA-L3S1_CL:- Globex California Layer 3 Switch 1 Distribution Layer
+GB-CA-L3S2_CL:- Globex California Layer 3 Switch 2 Distribution Layer
+GB-CA-L2S1_AL:- Globex California Layer 2 Switch 1 Access Layer
+GB-CA-L2S2_AL:- Globex California Layer 2 Switch 2 Access Layer
+GB-CA-L2S3_AL:- Globex California Layer 2 Switch 3 Access Layer
+GB-CA-L2S4_AL:- Globex California Layer 2 Switch 4 Access Layer
