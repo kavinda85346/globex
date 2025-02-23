@@ -52,6 +52,51 @@ GB-CA-L2S2_AL(config-if-range)#switchport trunk native vlan 40
 GB-CA-L2S2_AL(config-if-range)#switchport trunk allowed vlan 8-40
 GB-CA-L2S2_AL(config-if-range)#switchport nonegotiate
 
+//VLAN Interface Configuration
+GB-CA-L2S2_AL(config)#interface vlan 50
+GB-CA-L2S2_AL(config-if)#description management vlan interface
+GB-CA-L2S2_AL(config-if)#ip address 10.5.2.26 255.255.255.224
+GB-CA-L2S2_AL(config-if)#no shutdown
+GB-CA-L2S2_AL(config-if)#exit
+GB-CA-L2S2_AL(config)#interface vlan 100
+GB-CA-L2S2_AL(config-if)#description usage vlan interface
+GB-CA-L2S2_AL(config-if)#ip address 10.5.2.58 255.255.255.224
+GB-CA-L2S2_AL(config-if)#no shutdown
+GB-CA-L2S2_AL(config-if)#exit
+GB-CA-L2S2_AL(config)#interface vlan 150
+GB-CA-L2S2_AL(config-if)#description voice vlan interface
+GB-CA-L2S2_AL(config-if)#ip address 10.5.2.90 255.255.255.224
+GB-CA-L2S2_AL(config-if)#no shutdown
+GB-CA-L2S2_AL(config-if)#exit
+GB-CA-L2S2_AL(config)#interface vlan 96
+GB-CA-L2S2_AL(config-if)#description security vlan interface
+GB-CA-L2S2_AL(config-if)#ip address 10.5.2.122 255.255.255.224
+GB-CA-L2S2_AL(config-if)#no shutdown
+GB-CA-L2S2_AL(config-if)#exit
+GB-CA-L2S2_AL(config)#interface vlan 128
+GB-CA-L2S2_AL(config-if)#description it vlan interface
+GB-CA-L2S2_AL(config-if)#ip address 10.5.2.154 255.255.255.224
+GB-CA-L2S2_AL(config-if)#no shutdown
+GB-CA-L2S2_AL(config-if)#exit
+GB-CA-L2S2_AL(config)#interface vlan 160
+GB-CA-L2S2_AL(config-if)#description finance vlan interface
+GB-CA-L2S2_AL(config-if)#ip address 10.5.2.170 255.255.255.240
+GB-CA-L2S2_AL(config-if)#no shutdown
+GB-CA-L2S2_AL(config-if)#exit
+GB-CA-L2S2_AL(config)#interface vlan 176
+GB-CA-L2S2_AL(config-if)#description hr vlan interface
+GB-CA-L2S2_AL(config-if)#ip address 10.5.2.186 255.255.255.240
+GB-CA-L2S2_AL(config-if)#no shutdown
+GB-CA-L2S2_AL(config-if)#exit
+GB-CA-L2S2_AL(config)#interface vlan 200
+GB-CA-L2S2_AL(config-if)#description native vlan interface
+GB-CA-L2S2_AL(config-if)#ip address 10.5.2.202 255.255.255.240
+GB-CA-L2S2_AL(config-if)#no shutdown
+
+
+
+
+
 
 
 

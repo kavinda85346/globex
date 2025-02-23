@@ -52,6 +52,48 @@ GB-CA-L3S1_DL(config-if-range)#switchport trunk native vlan 40
 GB-CA-L3S1_DL(config-if-range)#switchport trunk allowed vlan 8-40
 GB-CA-L3S1_DL(config-if-range)#switchport nonegotiate
 
+//Inter-VLAN Routing Configuration
+GB-CA-L3S1_DL(config)#ip routing
+GB-CA-L3S1_DL(config)#interface vlan 50
+GB-CA-L3S1_DL(config-if)#description management vlan interface
+GB-CA-L3S1_DL(config-if)#ip address 10.5.2.29 255.255.255.224
+GB-CA-L3S1_DL(config-if)#no shutdown
+GB-CA-L3S1_DL(config-if)#exit
+GB-CA-L3S1_DL(config)#interface vlan 100
+GB-CA-L3S1_DL(config-if)#description usage vlan interface
+GB-CA-L3S1_DL(config-if)#ip address 10.5.2.61 255.255.255.224
+GB-CA-L3S1_DL(config-if)#no shutdown
+GB-CA-L3S1_DL(config-if)#exit
+GB-CA-L3S1_DL(config)#interface vlan 150
+GB-CA-L3S1_DL(config-if)#description voice vlan interface
+GB-CA-L3S1_DL(config-if)#ip address 10.5.2.93 255.255.255.224
+GB-CA-L3S1_DL(config-if)#no shutdown
+GB-CA-L3S1_DL(config-if)#exit
+GB-CA-L3S1_DL(config)#interface vlan 96
+GB-CA-L3S1_DL(config-if)#description security vlan interface
+GB-CA-L3S1_DL(config-if)#ip address 10.5.2.125 255.255.255.224
+GB-CA-L3S1_DL(config-if)#no shutdown
+GB-CA-L3S1_DL(config-if)#exit
+GB-CA-L3S1_DL(config)#interface vlan 128
+GB-CA-L3S1_DL(config-if)#description it vlan interface
+GB-CA-L3S1_DL(config-if)#ip address 10.5.2.157 255.255.255.224
+GB-CA-L3S1_DL(config-if)#no shutdown
+GB-CA-L3S1_DL(config-if)#exit
+GB-CA-L3S1_DL(config)#interface vlan 160
+GB-CA-L3S1_DL(config-if)#description finance vlan interface
+GB-CA-L3S1_DL(config-if)#ip address 10.5.2.173 255.255.255.240
+GB-CA-L3S1_DL(config-if)#no shutdown
+GB-CA-L3S1_DL(config-if)#exit
+GB-CA-L3S1_DL(config)#interface vlan 176
+GB-CA-L3S1_DL(config-if)#description hr vlan interface
+GB-CA-L3S1_DL(config-if)#ip address 10.5.2.189 255.255.255.240
+GB-CA-L3S1_DL(config-if)#no shutdown
+GB-CA-L3S1_DL(config-if)#exit
+GB-CA-L3S1_DL(config)#interface vlan 200
+GB-CA-L3S1_DL(config-if)#description native vlan interface
+GB-CA-L3S1_DL(config-if)#ip address 10.5.2.205 255.255.255.240
+GB-CA-L3S1_DL(config-if)#no shutdown
+
 
 
 
