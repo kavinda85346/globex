@@ -4,17 +4,21 @@ Switch#configure terminal
 Switch(config)#hostname GB-CA-L2S2_AL
 
 //Vlan Configuration
-GB-CA-L2S2_AL(config)#vlan 8
-GB-CA-L2S2_AL(config-vlan)#name security
-GB-CA-L2S2_AL(config-vlan)#vlan 16
-GB-CA-L2S2_AL(config-vlan)#name it
-GB-CA-L2S2_AL(config-vlan)#vlan 24
-GB-CA-L2S2_AL(config-vlan)#name finance
-GB-CA-L2S2_AL(config-vlan)#vlan 32
-GB-CA-L2S2_AL(config-vlan)#name hr
-GB-CA-L2S2_AL(config-vlan)#vlan 36
+GB-CA-L2S2_AL(config)#vlan 50
 GB-CA-L2S2_AL(config-vlan)#name management
-GB-CA-L2S2_AL(config-vlan)#vlan 40
+GB-CA-L2S2_AL(config-vlan)#vlan 100
+GB-CA-L2S2_AL(config-vlan)#name resources usage
+GB-CA-L2S2_AL(config-vlan)#vlan 150
+GB-CA-L2S2_AL(config-vlan)#name voice
+GB-CA-L2S2_AL(config-vlan)#vlan 96
+GB-CA-L2S2_AL(config-vlan)#name security
+GB-CA-L2S2_AL(config-vlan)#vlan 128
+GB-CA-L2S2_AL(config-vlan)#name it
+GB-CA-L2S2_AL(config-vlan)#vlan 160
+GB-CA-L2S2_AL(config-vlan)#name finance
+GB-CA-L2S2_AL(config-vlan)#vlan 176
+GB-CA-L2S2_AL(config-vlan)#name hr
+GB-CA-L2S2_AL(config-vlan)#vlan 200
 GB-CA-L2S2_AL(config-vlan)#name native
 
 //Switchports VLAN Assignment
@@ -47,6 +51,9 @@ GB-CA-L2S2_AL(config-if-range)#switchport mode trunk
 GB-CA-L2S2_AL(config-if-range)#switchport trunk native vlan 40
 GB-CA-L2S2_AL(config-if-range)#switchport trunk allowed vlan 8-40
 GB-CA-L2S2_AL(config-if-range)#switchport nonegotiate
+
+
+
 
 
 
