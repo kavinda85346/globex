@@ -99,5 +99,9 @@ GB-CA-L2S1_AL(config-if)#exit
 GB-CA-L2S1_AL(config)#interface fastEthernet 0/2
 GB-CA-L2S1_AL(config-if)#switchport mode access
 GB-CA-L2S1_AL(config-if)#switchport access vlan 96
+GB-CA-L2S1_AL(config-if)#exit
+GB-CA-L2S1_AL(config)#interface range fastEthernet 0/3-22
+GB-CA-L2S1_AL(config-if-range)#switchport mode access
+GB-CA-L2S1_AL(config-if-range)#switchport access vlan 200
 
 

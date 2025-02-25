@@ -63,29 +63,18 @@ GB-CA-L2S2_AL(config-if)#switchport trunk native vlan 200
 GB-CA-L2S2_AL(config-if)#switchport trunk allowed vlan 50-200
 GB-CA-L2S2_AL(config-if)#switchport nonegotiate
 
-//Switchports VLAN Assignment
+\\Assinging VLANs for Switchports
 GB-CA-L2S2_AL(config)#interface fastEthernet 0/1
 GB-CA-L2S2_AL(config-if)#switchport mode access
-GB-CA-L2S2_AL(config-if)#switchport access vlan 8
+GB-CA-L2S2_AL(config-if)#switchport access vlan 100
 GB-CA-L2S2_AL(config-if)#exit
 GB-CA-L2S2_AL(config)#interface fastEthernet 0/2
 GB-CA-L2S2_AL(config-if)#switchport mode access
-GB-CA-L2S2_AL(config-if)#switchport access vlan 16
+GB-CA-L2S2_AL(config-if)#switchport access vlan 128
 GB-CA-L2S2_AL(config-if)#exit
-GB-CA-L2S2_AL(config)#interface fastEthernet 0/3
-GB-CA-L2S2_AL(config-if)#switchport mode access
-GB-CA-L2S2_AL(config-if)#switchport access vlan 24
-GB-CA-L2S2_AL(config-if)#exit
-GB-CA-L2S2_AL(config)#interface fastEthernet 0/4
-GB-CA-L2S2_AL(config-if)#switchport mode access
-GB-CA-L2S2_AL(config-if)#switchport access vlan 32
-GB-CA-L2S2_AL(config-if)#exit
-GB-CA-L2S2_AL(config)#interface fastEthernet 0/5
-GB-CA-L2S2_AL(config-if)#switchport mode access
-GB-CA-L2S2_AL(config-if)#switchport access vlan 36
-GB-CA-L2S2_AL(config)#interface range fastEthernet 0/6-24
-GB-CA-L2S2_AL(config-if)#switchport mode access
-GB-CA-L2S2_AL(config-if)#switchport access vlan 40
+GB-CA-L2S2_AL(config)#interface range fastEthernet 0/3-20
+GB-CA-L2S2_AL(config-if-range)#switchport mode access
+GB-CA-L2S2_AL(config-if-range)#switchport access vlan 200
 
 //VLAN Interface Configuration
 GB-CA-L2S2_AL(config)#interface vlan 50
