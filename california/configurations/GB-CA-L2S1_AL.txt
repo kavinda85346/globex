@@ -104,4 +104,11 @@ GB-CA-L2S1_AL(config)#interface range fastEthernet 0/3-22
 GB-CA-L2S1_AL(config-if-range)#switchport mode access
 GB-CA-L2S1_AL(config-if-range)#switchport access vlan 200
 
+\\STP Configuration
+GB-CA-L2S1_AL(config)#spanning-tree mode pvst
+GB-CA-L2S1_AL(config)#interface range fastEthernet 0/1-2
+GB-CA-L2S1_AL(config-if-range)#spanning-tree portfast
+GB-CA-L2S1_AL(config-if-range)#spanning-tree bpduguard enable
+
+
 

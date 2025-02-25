@@ -101,6 +101,12 @@ GB-CA-L2S4_AL(config-if)#description native vlan interface
 GB-CA-L2S4_AL(config-if)#ip address 10.5.2.200 255.255.255.240
 GB-CA-L2S4_AL(config-if)#no shutdown
 
+\\STP Configuration
+GB-CA-L2S4_AL(config)#spanning-tree mode pvst
+GB-CA-L2S4_AL(config)#interface range fastEthernet 0/1-2
+GB-CA-L2S4_AL(config-if-range)#spanning-tree portfast
+GB-CA-L2S4_AL(config-if-range)#spanning-tree bpduguard enable
+
 
 
 
