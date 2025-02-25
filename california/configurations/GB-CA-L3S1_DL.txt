@@ -53,12 +53,6 @@ GB-CA-L3S1_DL(config-if-range)#switchport trunk allowed vlan 50-200
 GB-CA-L3S1_DL(config-if-range)#switchport nonegotiate
 GB-CA-L3S1_DL(config-if-range)#channel-group 4 mode passive
 GB-CA-L3S1_DL(config-if-range)#exit
-GB-CA-L3S1_DL(config)#interface port-channel 4
-GB-CA-L3S1_DL(config-if)#switchport mode trunk
-GB-CA-L3S1_DL(config-if)#switchport trunk native vlan 200
-GB-CA-L3S1_DL(config-if)#switchport trunk allowed vlan 50-200
-GB-CA-L3S1_DL(config-if)#switchport nonegotiate
-GB-CA-L3S1_DL(config-if)#exit
 GB-CA-L3S1_DL(config)#interface range gigabitEthernet 1/0/19-20
 GB-CA-L3S1_DL(config-if-range)#switchport mode trunk
 GB-CA-L3S1_DL(config-if-range)#switchport trunk native vlan 200
@@ -66,12 +60,6 @@ GB-CA-L3S1_DL(config-if-range)#switchport trunk allowed vlan 50-200
 GB-CA-L3S1_DL(config-if-range)#switchport nonegotiate
 GB-CA-L3S1_DL(config-if-range)#channel-group 5 mode active
 GB-CA-L3S1_DL(config-if-range)#exit
-GB-CA-L3S1_DL(config)#interface port-channel 5
-GB-CA-L3S1_DL(config-if)#switchport mode trunk
-GB-CA-L3S1_DL(config-if)#switchport trunk native vlan 200
-GB-CA-L3S1_DL(config-if)#switchport trunk allowed vlan 50-200
-GB-CA-L3S1_DL(config-if)#switchport nonegotiate
-GB-CA-L3S1_DL(config-if)#exit
 GB-CA-L3S1_DL(config)#interface range gigabitEthernet 1/0/23-24
 GB-CA-L3S1_DL(config-if-range)#switchport mode trunk
 GB-CA-L3S1_DL(config-if-range)#switchport trunk native vlan 200
@@ -79,11 +67,31 @@ GB-CA-L3S1_DL(config-if-range)#switchport trunk allowed vlan 50-200
 GB-CA-L3S1_DL(config-if-range)#switchport nonegotiate
 GB-CA-L3S1_DL(config-if-range)#channel-group 2 mode passive
 GB-CA-L3S1_DL(config-if-range)#exit
+GB-CA-L3S1_DL(config)#interface gigabitEthernet 1/1/1
+GB-CA-L3S1_DL(config-if)#switchport mode trunk
+GB-CA-L3S1_DL(config-if)#switchport trunk native vlan 200
+GB-CA-L3S1_DL(config-if)#switchport trunk allowed vlan 50-200
+GB-CA-L3S1_DL(config-if)#switchport nonegotiate
+
+//Port Channel Configuration
+GB-CA-L3S1_DL(config)#interface port-channel 4
+GB-CA-L3S1_DL(config-if)#switchport mode trunk
+GB-CA-L3S1_DL(config-if)#switchport trunk native vlan 200
+GB-CA-L3S1_DL(config-if)#switchport trunk allowed vlan 50-200
+GB-CA-L3S1_DL(config-if)#switchport nonegotiate
+GB-CA-L3S1_DL(config-if)#exit
+GB-CA-L3S1_DL(config)#interface port-channel 5
+GB-CA-L3S1_DL(config-if)#switchport mode trunk
+GB-CA-L3S1_DL(config-if)#switchport trunk native vlan 200
+GB-CA-L3S1_DL(config-if)#switchport trunk allowed vlan 50-200
+GB-CA-L3S1_DL(config-if)#switchport nonegotiate
+GB-CA-L3S1_DL(config-if)#exit
 GB-CA-L3S1_DL(config)#interface port-channel 2
 GB-CA-L3S1_DL(config-if)#switchport mode trunk
 GB-CA-L3S1_DL(config-if)#switchport trunk native vlan 200
 GB-CA-L3S1_DL(config-if)#switchport trunk allowed vlan 50-200
 GB-CA-L3S1_DL(config-if)#switchport nonegotiate
+GB-CA-L3S1_DL(config-if)#exit
 
 //Inter-VLAN Routing Configuration
 GB-CA-L3S1_DL(config)#ip routing

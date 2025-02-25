@@ -29,12 +29,6 @@ GB-CA-L2S2_AL(config-if-range)#switchport trunk allowed vlan 50-200
 GB-CA-L2S2_AL(config-if-range)#switchport nonegotiate
 GB-CA-L2S2_AL(config-if-range)#channel-group 1 mode passive
 GB-CA-L2S2_AL(config-if-range)#exit
-GB-CA-L2S2_AL(config)#interface port-channel 1
-GB-CA-L2S2_AL(config-if)#switchport mode trunk
-GB-CA-L2S2_AL(config-if)#switchport trunk native vlan 200
-GB-CA-L2S2_AL(config-if)#switchport trunk allowed vlan 50-200
-GB-CA-L2S2_AL(config-if)#switchport nonegotiate
-GB-CA-L2S2_AL(config-if)#exit
 GB-CA-L2S2_AL(config)#interface range fastEthernet 0/21-22
 GB-CA-L2S2_AL(config-if-range)#switchport mode trunk
 GB-CA-L2S2_AL(config-if-range)#switchport trunk native vlan 200
@@ -42,12 +36,6 @@ GB-CA-L2S2_AL(config-if-range)#switchport trunk allowed vlan 50-200
 GB-CA-L2S2_AL(config-if-range)#switchport nonegotiate
 GB-CA-L2S2_AL(config-if-range)#channel-group 2 mode active
 GB-CA-L2S2_AL(config-if-range)#exit
-GB-CA-L2S2_AL(config)#interface port-channel 2
-GB-CA-L2S2_AL(config-if)#switchport mode trunk
-GB-CA-L2S2_AL(config-if)#switchport trunk native vlan 200
-GB-CA-L2S2_AL(config-if)#switchport trunk allowed vlan 50-200
-GB-CA-L2S2_AL(config-if)#switchport nonegotiate
-GB-CA-L2S2_AL(config-if)#exit
 GB-CA-L2S2_AL(config)#interface range gigabitEthernet 0/1-2
 GB-CA-L2S2_AL(config-if-range)#switchport mode trunk
 GB-CA-L2S2_AL(config-if-range)#switchport trunk native vlan 200
@@ -55,6 +43,20 @@ GB-CA-L2S2_AL(config-if-range)#switchport trunk allowed vlan 50-200
 GB-CA-L2S2_AL(config-if-range)#switchport nonegotiate
 GB-CA-L2S2_AL(config-if-range)#channel-group 5 mode active
 GB-CA-L2S2_AL(config-if-range)#exit
+
+//Port Channel Creation
+GB-CA-L2S2_AL(config)#interface port-channel 1
+GB-CA-L2S2_AL(config-if)#switchport mode trunk
+GB-CA-L2S2_AL(config-if)#switchport trunk native vlan 200
+GB-CA-L2S2_AL(config-if)#switchport trunk allowed vlan 50-200
+GB-CA-L2S2_AL(config-if)#switchport nonegotiate
+GB-CA-L2S2_AL(config-if)#exit
+GB-CA-L2S2_AL(config)#interface port-channel 2
+GB-CA-L2S2_AL(config-if)#switchport mode trunk
+GB-CA-L2S2_AL(config-if)#switchport trunk native vlan 200
+GB-CA-L2S2_AL(config-if)#switchport trunk allowed vlan 50-200
+GB-CA-L2S2_AL(config-if)#switchport nonegotiate
+GB-CA-L2S2_AL(config-if)#exit
 GB-CA-L2S2_AL(config)#interface port-channel 5
 GB-CA-L2S2_AL(config-if)#switchport mode trunk
 GB-CA-L2S2_AL(config-if)#switchport trunk native vlan 200

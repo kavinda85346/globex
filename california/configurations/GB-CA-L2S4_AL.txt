@@ -53,12 +53,6 @@ GB-CA-L2S4_AL(config-if-range)#switchport trunk allowed vlan 50-200
 GB-CA-L2S4_AL(config-if-range)#switchport nonegotiate
 GB-CA-L2S4_AL(config-if-range)#channel-group 3 mode passive
 GB-CA-L2S4_AL(config-if-range)#exit
-GB-CA-L2S4_AL(config)#interface port-channel 3
-GB-CA-L2S4_AL(config-if)#switchport mode trunk
-GB-CA-L2S4_AL(config-if)#switchport trunk native vlan 200
-GB-CA-L2S4_AL(config-if)#switchport trunk allowed vlan 50-200
-GB-CA-L2S4_AL(config-if)#switchport nonegotiate
-GB-CA-L2S4_AL(config-if)#exit
 GB-CA-L2S4_AL(config)#interface range gigabitEthernet 0/1-2
 GB-CA-L2S4_AL(config-if-range)#switchport mode trunk
 GB-CA-L2S4_AL(config-if-range)#switchport trunk native vlan 200
@@ -66,6 +60,14 @@ GB-CA-L2S4_AL(config-if-range)#switchport trunk allowed vlan 50-200
 GB-CA-L2S4_AL(config-if-range)#switchport nonegotiate
 GB-CA-L2S4_AL(config-if-range)#channel-group 1 mode passive
 GB-CA-L2S4_AL(config-if-range)#exit
+
+//Port Channel Configuration
+GB-CA-L2S4_AL(config)#interface port-channel 3
+GB-CA-L2S4_AL(config-if)#switchport mode trunk
+GB-CA-L2S4_AL(config-if)#switchport trunk native vlan 200
+GB-CA-L2S4_AL(config-if)#switchport trunk allowed vlan 50-200
+GB-CA-L2S4_AL(config-if)#switchport nonegotiate
+GB-CA-L2S4_AL(config-if)#exit
 GB-CA-L2S4_AL(config)#interface port-channel 1
 GB-CA-L2S4_AL(config-if)#switchport mode trunk
 GB-CA-L2S4_AL(config-if)#switchport trunk native vlan 200
@@ -112,19 +114,6 @@ GB-CA-L2S4_AL(config)#interface vlan 200
 GB-CA-L2S4_AL(config-if)#description native vlan interface
 GB-CA-L2S4_AL(config-if)#ip address 10.5.2.200 255.255.255.240
 GB-CA-L2S4_AL(config-if)#no shutdown
-
-interface range gigabitEthernet 0/1-2
-switchport mode trunk
-switchport trunk native vlan 200
-switchport trunk allowed vlan 50-200
-switchport nonegotiate
-channel-group 1 mode passive
-exit
-interface port-channel 1
-switchport mode trunk
-switchport trunk native vlan 200
-switchport trunk allowed vlan 50-200
-switchport nonegotiate
 
 
 
