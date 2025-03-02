@@ -1,7 +1,16 @@
 //Startup Configuration
-Router>enable
-Router#configure terminal
-Router(config)#hostname GB-AL-R_CCL
+Switch>enable
+Switch#configure terminal
+Switch(config)#hostname GB-AL-L3_CCL
+Switch(config)#ip routing
+GB-AL-L3_CCL(config)#interface gigabitEthernet 1/1/1
+GB-AL-L3_CCL(config-if)#no switchport
+GB-AL-L3_CCL(config-if)#ip address 200.100.50.2 255.255.255.252
+GB-AL-L3_CCL(config-if)#no shutdown
+GB-AL-L3_CCL(config-if)#interface gigabitEthernet 1/1/2
+GB-AL-L3_CCL(config-if)#no switchport
+GB-AL-L3_CCL(config-if)#ip address 200.100.50.5 255.255.255.252
+GB-AL-L3_CCL(config-if)#no shutdown
 
 //Subinterface Configuration
 GB-AL-R_CCL(config)#interface gigabitEthernet 4/0.8
@@ -57,5 +66,18 @@ GB-AL-R_CCL(config-if)#no shutdown
 GB-AL-R_CCL(config-if)#exit
 GB-AL-R_CCL(config)#interface gigabitEthernet 5/0
 GB-AL-R_CCL(config-if)#no shutdown
+
+\\OSPF 
+GB-AL-L3_CCL(config)#router ospf 1
+GB-AL-L3_CCL(config-router)#router-id 2.2.2.2
+GB-AL-L3_CCL(config-router)#network 200.100.50.0 0.0.0.3 area 0
+GB-AL-L3_CCL(config-router)#network 200.100.50.4 0.0.0.3 area 1
+GB-AL-L3_CCL(config-router)#passive-interface g 1/0/23
+GB-AL-L3_CCL(config-router)#passive-interface g 1/0/24
+GB-AL-L3_CCL(config-router)#exit
+GB-AL-L3_CCL(config)#interface gigabitEthernet 1/1/1
+GB-AL-L3_CCL(config)#ip ospf 1 area 0
+GB-AL-L3_CCL(config)#interface gigabitEthernet 1/1/2
+GB-AL-L3_CCL(config)#ip ospf 1 area 1
 
 

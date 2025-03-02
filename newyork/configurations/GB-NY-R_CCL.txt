@@ -1,0 +1,24 @@
+//Startup Configuration
+Router>enable
+Router#configure terminal
+Router(config)#hostname GB-NY-R_CCL
+GB-NY-R_CCL(config)#interface gigabitEthernet 1/0
+GB-NY-R_CCL(config-if)#ip address 200.100.50.9 255.255.255.252
+GB-NY-R_CCL(config-if)#no shutdown
+GB-NY-R_CCL(config-if)#interface gigabitEthernet 0/0
+GB-NY-R_CCL(config-if)#ip address 200.100.50.6 255.255.255.252
+GB-NY-R_CCL(config-if)#no shutdown
+
+//OSPF Configuration
+GB-NY-R_CCL(config)#router ospf 1
+GB-NY-R_CCL(config-router)#router-id 3.3.3.3
+GB-NY-R_CCL(config-router)#network 200.100.50.4 0.0.0.3 area 1
+GB-NY-R_CCL(config-router)#network 200.100.50.8 0.0.0.3 area 2
+GB-NY-R_CCL(config-router)#passive-interface g 2/0
+GB-NY-R_CCL(config-router)#passive-interface g 3/0
+GB-NY-R_CCL(config-router)#exit
+GB-NY-R_CCL(config)#interface gigabitEthernet 0/0
+GB-NY-R_CCL(config)#ip ospf 1 area 1
+GB-NY-R_CCL(config)#interface gigabitEthernet 1/0
+GB-NY-R_CCL(config)#ip ospf 1 area 2
+
