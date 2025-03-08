@@ -135,7 +135,7 @@ GB-CA-L3S1_DL(config-if)#description native vlan interface
 GB-CA-L3S1_DL(config-if)#ip address 10.5.2.205 255.255.255.240
 GB-CA-L3S1_DL(config-if)#no shutdown
 
-\\STP Configuration
+//STP Configuration
 GB-CA-L3S1_DL(config)#spanning-tree mode pvst
 
 

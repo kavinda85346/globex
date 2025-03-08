@@ -1,0 +1,102 @@
+//Startup Configuration
+Switch>enable
+Switch#configure terminal
+Switch(config)#hostname GB-AL-L2S2_AL
+
+//Vlan Configuration
+GB-AL-L2S2_AL(config)#vlan 50
+GB-AL-L2S2_AL(config-vlan)#name management
+GB-AL-L2S2_AL(config-vlan)#vlan 100
+GB-AL-L2S2_AL(config-vlan)#name usage
+GB-AL-L2S2_AL(config-vlan)#vlan 150
+GB-AL-L2S2_AL(config-vlan)#name voice
+GB-AL-L2S2_AL(config-vlan)#vlan 96
+GB-AL-L2S2_AL(config-vlan)#name security
+GB-AL-L2S2_AL(config-vlan)#vlan 128
+GB-AL-L2S2_AL(config-vlan)#name it
+GB-AL-L2S2_AL(config-vlan)#vlan 160
+GB-AL-L2S2_AL(config-vlan)#name finance
+GB-AL-L2S2_AL(config-vlan)#vlan 176
+GB-AL-L2S2_AL(config-vlan)#name hr
+GB-AL-L2S2_AL(config-vlan)#vlan 200
+GB-AL-L2S2_AL(config-vlan)#name native
+
+//VLAN Interface Configuration
+GB-AL-L3_CCL(config)#interface vlan 50
+GB-AL-L3_CCL(config-if)#description management vlan interface
+GB-AL-L3_CCL(config-if)#ip address 192.168.84.28 255.255.255.224
+GB-AL-L3_CCL(config-if)#no shutdown
+GB-AL-L3_CCL(config-if)#exit
+GB-AL-L3_CCL(config)#interface vlan 100
+GB-AL-L3_CCL(config-if)#description usage vlan interface
+GB-AL-L3_CCL(config-if)#ip address 192.168.84.60 255.255.255.224
+GB-AL-L3_CCL(config-if)#no shutdown
+GB-AL-L3_CCL(config-if)#exit
+GB-AL-L3_CCL(config)#interface vlan 150
+GB-AL-L3_CCL(config-if)#description voice vlan interface
+GB-AL-L3_CCL(config-if)#ip address 192.168.84.92 255.255.255.224
+GB-AL-L3_CCL(config-if)#no shutdown
+GB-AL-L3_CCL(config-if)#exit
+GB-AL-L3_CCL(config)#interface vlan 96
+GB-AL-L3_CCL(config-if)#description security vlan interface
+GB-AL-L3_CCL(config-if)#ip address 192.168.84.124 255.255.255.224
+GB-AL-L3_CCL(config-if)#no shutdown
+GB-AL-L3_CCL(config-if)#exit
+GB-AL-L3_CCL(config)#interface vlan 128
+GB-AL-L3_CCL(config-if)#description it vlan interface
+GB-AL-L3_CCL(config-if)#ip address 192.168.84.156 255.255.255.224
+GB-AL-L3_CCL(config-if)#no shutdown
+GB-AL-L3_CCL(config-if)#exit
+GB-AL-L3_CCL(config)#interface vlan 160
+GB-AL-L3_CCL(config-if)#description finance vlan interface
+GB-AL-L3_CCL(config-if)#ip address 192.168.84.172 255.255.255.240
+GB-AL-L3_CCL(config-if)#no shutdown
+GB-AL-L3_CCL(config-if)#exit
+GB-AL-L3_CCL(config)#interface vlan 176
+GB-AL-L3_CCL(config-if)#description hr vlan interface
+GB-AL-L3_CCL(config-if)#ip address 192.168.84.188 255.255.255.240
+GB-AL-L3_CCL(config-if)#no shutdown
+GB-AL-L3_CCL(config-if)#exit
+GB-AL-L3_CCL(config)#interface vlan 200
+GB-AL-L3_CCL(config-if)#description native vlan interface
+GB-AL-L3_CCL(config-if)#ip address 192.168.84.204 255.255.255.240
+GB-AL-L3_CCL(config-if)#no shutdown
+
+//Switchports VLAN Assignment
+GB-AL-L2S2_AL(config)#interface fastEthernet 0/1
+GB-AL-L2S2_AL(config-if)#switchport mode access
+GB-AL-L2S2_AL(config-if)#switchport access vlan 160
+GB-AL-L2S2_AL(config-if)#exit
+GB-AL-L2S2_AL(config)#interface fastEthernet 0/2
+GB-AL-L2S2_AL(config-if)#switchport mode access
+GB-AL-L2S2_AL(config-if)#switchport access vlan 150
+GB-AL-L2S2_AL(config-if)#exit
+GB-AL-L2S2_AL(config)#interface fastEthernet 0/3
+GB-AL-L2S2_AL(config-if)#switchport mode access
+GB-AL-L2S2_AL(config-if)#switchport access vlan 128
+GB-AL-L2S2_AL(config-if)#exit
+GB-AL-L2S2_AL(config)#interface fastEthernet 0/4
+GB-AL-L2S2_AL(config-if)#switchport mode access
+GB-AL-L2S2_AL(config-if)#switchport access vlan 176
+GB-AL-L2S2_AL(config-if)#exit
+
+//Trunk Configuration
+GB-AL-L2S2_AL(config)#interface range fastEthernet 0/23-24
+GB-AL-L2S2_AL(config-if-range)#switchport mode trunk
+GB-AL-L2S2_AL(config-if-range)#switchport trunk native vlan 200
+GB-AL-L2S2_AL(config-if-range)#switchport trunk allowed vlan 50-200
+GB-AL-L2S2_AL(config-if-range)#switchport nonegotiate
+GB-AL-L2S2_AL(config-if-range)#channel-group 1 mode passive
+GB-AL-L2S2_AL(config-if-range)#exit
+GB-AL-L2S2_AL(config)#interface range gigabitEthernet g 0/2
+GB-AL-L2S2_AL(config-if-range)#switchport mode trunk
+GB-AL-L2S2_AL(config-if-range)#switchport trunk native vlan 200
+GB-AL-L2S2_AL(config-if-range)#switchport trunk allowed vlan 50-200
+GB-AL-L2S2_AL(config-if-range)#switchport nonegotiate
+GB-AL-L2S2_AL(config-if-range)#exit
+
+//STP Configuration
+GB-CA-L2S1_AL(config)#spanning-tree mode pvst
+GB-CA-L2S1_AL(config)#interface range fastEthernet 0/1-4
+GB-CA-L2S1_AL(config-if-range)#spanning-tree portfast
+GB-CA-L2S1_AL(config-if-range)#spanning-tree bpduguard enable

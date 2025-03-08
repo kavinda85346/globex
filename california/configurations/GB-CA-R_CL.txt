@@ -85,7 +85,7 @@ GB-CA-R_CL(dhcp-config)#ip dhcp pool native
 GB-CA-R_CL(dhcp-config)#network 10.5.2.192 255.255.255.240
 GB-CA-R_CL(dhcp-config)#default-router 10.5.2.206
 
-
+//OSPF Configuration
 GB-CA-R_CL(config)#router ospf 1
 GB-CA-R_CL(config-router)#router-id 1.1.1.1
 GB-CA-R_CL(config-router)#network 200.100.50.0 0.0.0.7 area 0
@@ -97,6 +97,20 @@ GB-CA-R_CL(config)#interface gigabitEthernet 0/0
 GB-CA-R_CL(config-if)#ip ospf 1 area 0
 GB-CA-R_CL(config-if)#interface gigabitEthernet 1/0
 GB-CA-R_CL(config-if)#ip ospf 1 area 2
+
+//HSRP Configuration
+GB-CA-R_CL(config)#interface gigabitEthernet 0/0
+GB-CA-R_CL(config-if)#standby 1 ip 200.100.50.3
+GB-CA-R_CL(config-if)#standby 1 priority 110
+GB-CA-R_CL(config-if)#standby 1 preempt
+GB-CA-R_CL(config-if)#exit
+GB-CA-R_CL(config)#interface gigabitEthernet 1/0
+GB-CA-R_CL(config-if)#standby 3 ip 200.100.50.19
+GB-CA-R_CL(config-if)#standby 3 priority 110
+GB-CA-R_CL(config-if)#standby 3 preempt
+
+
+
 
 
 
