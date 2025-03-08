@@ -3,7 +3,7 @@ Router>enable
 Router#configure terminal
 Router(config)#hostname GB-CA-R_CL
 GB-CA-R_CL(config)#interface gigabitEthernet 0/0
-GB-CA-R_CL(config-if)#ip address 200.100.50.1 255.255.255.252
+GB-CA-R_CL(config-if)#ip address 200.100.50.1 255.255.255.248
 GB-CA-R_CL(config-if)#no shutdown
 GB-CA-R_CL(config-if)#interface gigabitEthernet 1/0
 GB-CA-R_CL(config-if)#ip address 200.100.50.10 255.255.255.252
@@ -88,8 +88,8 @@ GB-CA-R_CL(dhcp-config)#default-router 10.5.2.206
 
 GB-CA-R_CL(config)#router ospf 1
 GB-CA-R_CL(config-router)#router-id 1.1.1.1
-GB-CA-R_CL(config-router)#network 200.100.50.0 0.0.0.3 area 0
-GB-CA-R_CL(config-router)#network 200.100.50.8 0.0.0.3 area 2
+GB-CA-R_CL(config-router)#network 200.100.50.0 0.0.0.7 area 0
+GB-CA-R_CL(config-router)#network 200.100.50.16 0.0.0.7 area 2
 GB-CA-R_CL(config-router)#passive-interface gigabitEthernet 2/0 
 GB-CA-R_CL(config-router)#passive-interface gigabitEthernet 3/0
 GB-CA-R_CL(config-router)#exit
