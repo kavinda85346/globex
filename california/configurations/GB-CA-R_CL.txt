@@ -81,9 +81,6 @@ GB-CA-R_CL(dhcp-config)#default-router 10.5.2.174
 GB-CA-R_CL(dhcp-config)#ip dhcp pool hr
 GB-CA-R_CL(dhcp-config)#network 10.5.2.176 255.255.255.240
 GB-CA-R_CL(dhcp-config)#default-router 10.5.2.190
-GB-CA-R_CL(dhcp-config)#ip dhcp pool native
-GB-CA-R_CL(dhcp-config)#network 10.5.2.192 255.255.255.240
-GB-CA-R_CL(dhcp-config)#default-router 10.5.2.206
 
 //OSPF Configuration
 GB-CA-R_CL(config)#router ospf 1
