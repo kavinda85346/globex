@@ -6,24 +6,24 @@ This is a network infrasture enchancement project.
 
 ## 📖 Table of Contents
 
-- [Introdution](#introduction)
-- [Logical Topology](#logical-topology)
-- [Project Structure](#project-structure)
-- [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Useage](#useage)
+- [👋 Introdution](#introduction)
+- [🗺️ Logical Topology](#logical-topology)
+- [📁 Project Structure](#project-structure)
+- [🛠 Tech Stack](#tech-stack)
+- [🚀 Installation](#installation)
+- [💻 Useage](#useage)
 - [License](#license)
-- [Author](#author)
+- [🧑‍💻 Author](#author)
 
 ---
 
-## 👋 Introduction
+## Introduction
 
 Globex is a multinational retail corporation which sells goods to many customers all around the globe and braches of Globex are located all around the globe. Recently there has been a scale up of customers at Alabama, California and Newyork states. In order to meet the demands of the growing customers of the corresponding states, current network infratructure was not sufficent. So the CTO of Globex decided to scale up the network infrastucture of the Alabama, California and Newyork braches. Alabama, California and Newyork folders contains network device configurations that belongs to the network equipment of those branches and the list of networking gears of those sites.
 
 ---
 
-## 🗺️ Logical Topology
+## Logical Topology
 
 ### Logical Topology
 
@@ -35,7 +35,7 @@ Globex is a multinational retail corporation which sells goods to many customers
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 
@@ -56,21 +56,21 @@ globex/
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Vendor:** Cisco
 - **Tools:** Cisco Packet Tracer
 
 ---
 
-## 🚀 Installation
+## Installation
 
 - **Download Cisco Packet Tracer.exe file from Cisco Networking Academy.**
 - **Run the exe file and complete complete the installlation process.**
 
 ---
 
-## 💻 Useage
+## Useage
 
 - **Login into the cisco packet tracer as a guest.**
 - **According to the logical toplogy, create the network toplogy.**
@@ -80,7 +80,7 @@ globex/
 
 ---
 
-## 🧑‍💻 Author
+## Author
 
 Kavinda Kethiya Rajapaksha
 
