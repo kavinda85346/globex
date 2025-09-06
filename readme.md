@@ -12,7 +12,6 @@ This is a network infrasture enchancement project.
 - [🛠 Tech Stack](#tech-stack)
 - [🚀 Installation](#installation)
 - [💻 Useage](#useage)
-- [License](#license)
 - [🧑‍💻 Author](#author)
 
 ---
