@@ -6,14 +6,14 @@ This is a network infrasture enchancement project.
 
 ## 📖 Table of Contents
 
-- [👋 Introdution](#introduction)
-- [🗺️ Logical Topology](#logical-topology)
-- [📁 Project Structure](#project-structure)
-- [🛠 Tech Stack](#tech-stack)
-- [🚀 Installation](#installation)
-- [💻 Useage](#useage)
-- [⚖️ License](#license)
-- [🧑‍💻 Author](#author)
+- [Introdution](#introduction)
+- [Logical Topology](#logical-topology)
+- [Project Structure](#project-structure)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Useage](#useage)
+- [License](#license)
+- [Author](#author)
 
 ---
 
