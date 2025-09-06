@@ -11,7 +11,7 @@ This is a network infrasture enchancement project.
 - [📁 Project Structure](#project-structure)
 - [🛠 Tech Stack](#tech-stack)
 - [🚀 Installation](#installation)
-- [💻 Useage](#usage)
+- [💻 Useage](#useage)
 - [⚖️ License](#license)
 - [🧑‍💻 Author](#author)
 
