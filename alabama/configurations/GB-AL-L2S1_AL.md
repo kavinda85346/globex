@@ -1,9 +1,14 @@
-//Startup Configuration
+#### GB-AL-L2S1_AL Device Configurations ⚙️
+
+**Startup Configuration**
+```
 Switch>enable
 Switch#configure terminal
 Switch(config)#hostname GB-AL-L2S1_AL
+```
 
-//Vlan Configuration
+**Vlan Configuration**
+```
 GB-AL-L2S1_AL(config)#vlan 50
 GB-AL-L2S1_AL(config-vlan)#name management
 GB-AL-L2S1_AL(config-vlan)#vlan 100
@@ -20,8 +25,10 @@ GB-AL-L2S1_AL(config-vlan)#vlan 176
 GB-AL-L2S1_AL(config-vlan)#name hr
 GB-AL-L2S1_AL(config-vlan)#vlan 200
 GB-AL-L2S1_AL(config-vlan)#name native
+```
 
-//VLAN Interface Configuration
+**VLAN Interface Configuration**
+```
 GB-AL-L3_CCL(config)#interface vlan 50
 GB-AL-L3_CCL(config-if)#description management vlan interface
 GB-AL-L3_CCL(config-if)#ip address 192.168.84.29 255.255.255.224
@@ -61,8 +68,10 @@ GB-AL-L3_CCL(config)#interface vlan 200
 GB-AL-L3_CCL(config-if)#description native vlan interface
 GB-AL-L3_CCL(config-if)#ip address 192.168.84.205 255.255.255.240
 GB-AL-L3_CCL(config-if)#no shutdown
+```
 
-//Trunk Configuration
+**Trunk Configuration**
+```
 GB-CA-L2S1_AL(config)#interface range fastEthernet 0/23-24
 GB-CA-L2S1_AL(config-if-range)#switchport mode trunk
 GB-CA-L2S1_AL(config-if-range)#switchport trunk native vlan 200
@@ -76,8 +85,10 @@ GB-CA-L2S1_AL(config-if-range)#switchport trunk native vlan 200
 GB-CA-L2S1_AL(config-if-range)#switchport trunk allowed vlan 50-200
 GB-CA-L2S1_AL(config-if-range)#switchport nonegotiate
 GB-CA-L2S1_AL(config-if-range)#exit
+```
 
-//Switchports VLAN Assignment
+**Switchports VLAN Assignment**
+```
 GB-AL-L2S1_AL(config)#interface fastEthernet 0/1
 GB-AL-L2S1_AL(config-if)#switchport mode access
 GB-AL-L2S1_AL(config-if)#switchport access vlan 50
@@ -90,19 +101,24 @@ GB-AL-L2S1_AL(config)#interface fastEthernet 0/3
 GB-AL-L2S1_AL(config-if)#switchport mode access
 GB-AL-L2S1_AL(config-if)#switchport access vlan 100
 GB-AL-L2S1_AL(config-if)#exit
+```
 
-//Port Channel Configuration
+**Port Channel Configuration**
+```
 GB-CA-L2S1_AL(config)#interface port-channel 1
 GB-CA-L2S1_AL(config-if)#switchport mode trunk
 GB-CA-L2S1_AL(config-if)#switchport trunk native vlan 200
 GB-CA-L2S1_AL(config-if)#switchport trunk allowed vlan 50-200
 GB-CA-L2S1_AL(config-if)#switchport nonegotiate
+```
 
-//STP Configuration
+**STP Configuration**
+```
 GB-CA-L2S1_AL(config)#spanning-tree mode pvst
 GB-CA-L2S1_AL(config)#interface range fastEthernet 0/1-3
 GB-CA-L2S1_AL(config-if-range)#spanning-tree portfast
 GB-CA-L2S1_AL(config-if-range)#spanning-tree bpduguard enable
+```
 
 
 

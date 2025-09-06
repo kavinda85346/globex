@@ -1,4 +1,7 @@
-//Startup Configuration
+#### GB-CA-R_CL Device Configurations ⚙️
+
+**Startup Configuration**
+```
 Router>enable
 Router#configure terminal
 Router(config)#hostname GB-CA-R_CL
@@ -8,8 +11,10 @@ GB-CA-R_CL(config-if)#no shutdown
 GB-CA-R_CL(config-if)#interface gigabitEthernet 1/0
 GB-CA-R_CL(config-if)#ip address 200.100.50.10 255.255.255.252
 GB-CA-R_CL(config-if)#no shutdown
+```
 
-//Subinterface Configuration
+**Subinterface Configuration**
+```
 GB-CA-R_CL(config)#interface gigabitEthernet 2/0.50
 GB-CA-R_CL(config-subif)#ip address 10.5.2.30 255.255.255.224
 GB-CA-R_CL(config-subif)#encapsulation dot1Q 50
@@ -50,8 +55,10 @@ GB-CA-R_CL(config-if)#exit
 GB-CA-R_CL(config)#interface gigabitEthernet 3/0
 GB-CA-R_CL(config-if)#no shutdown
 GB-CA-R_CL(config-if)#exit
+```
 
-//DHCP Pool Configuration
+**DHCP Pool Configuration**
+```
 GB-CA-R_CL(config)#ip dhcp excluded-address 10.5.2.24 10.5.2.30
 GB-CA-R_CL(config)#ip dhcp excluded-address 10.5.2.56 10.5.2.62
 GB-CA-R_CL(config)#ip dhcp excluded-address 10.5.2.88 10.5.2.94
@@ -81,8 +88,10 @@ GB-CA-R_CL(dhcp-config)#default-router 10.5.2.174
 GB-CA-R_CL(dhcp-config)#ip dhcp pool hr
 GB-CA-R_CL(dhcp-config)#network 10.5.2.176 255.255.255.240
 GB-CA-R_CL(dhcp-config)#default-router 10.5.2.190
+```
 
-//OSPF Configuration
+**OSPF Configuration**
+```
 GB-CA-R_CL(config)#router ospf 1
 GB-CA-R_CL(config-router)#router-id 1.1.1.1
 GB-CA-R_CL(config-router)#network 200.100.50.0 0.0.0.7 area 0
@@ -94,8 +103,10 @@ GB-CA-R_CL(config)#interface gigabitEthernet 0/0
 GB-CA-R_CL(config-if)#ip ospf 1 area 0
 GB-CA-R_CL(config-if)#interface gigabitEthernet 1/0
 GB-CA-R_CL(config-if)#ip ospf 1 area 2
+```
 
-//HSRP Configuration
+**HSRP Configuration**
+```
 GB-CA-R_CL(config)#interface gigabitEthernet 0/0
 GB-CA-R_CL(config-if)#standby 1 ip 200.100.50.3
 GB-CA-R_CL(config-if)#standby 1 priority 110
@@ -105,6 +116,7 @@ GB-CA-R_CL(config)#interface gigabitEthernet 1/0
 GB-CA-R_CL(config-if)#standby 3 ip 200.100.50.19
 GB-CA-R_CL(config-if)#standby 3 priority 110
 GB-CA-R_CL(config-if)#standby 3 preempt
+```
 
 
 

@@ -1,9 +1,14 @@
-//Startup Configuration
+#### GB-AL-L2S2_AL Device Configurations ⚙️
+
+**Startup Configuration**
+```
 Switch>enable
 Switch#configure terminal
 Switch(config)#hostname GB-AL-L2S2_AL
+```
 
-//Vlan Configuration
+**Vlan Configuration**
+```
 GB-AL-L2S2_AL(config)#vlan 50
 GB-AL-L2S2_AL(config-vlan)#name management
 GB-AL-L2S2_AL(config-vlan)#vlan 100
@@ -20,8 +25,10 @@ GB-AL-L2S2_AL(config-vlan)#vlan 176
 GB-AL-L2S2_AL(config-vlan)#name hr
 GB-AL-L2S2_AL(config-vlan)#vlan 200
 GB-AL-L2S2_AL(config-vlan)#name native
+```
 
-//VLAN Interface Configuration
+**VLAN Interface Configuration**
+```
 GB-AL-L3_CCL(config)#interface vlan 50
 GB-AL-L3_CCL(config-if)#description management vlan interface
 GB-AL-L3_CCL(config-if)#ip address 192.168.84.28 255.255.255.224
@@ -61,8 +68,10 @@ GB-AL-L3_CCL(config)#interface vlan 200
 GB-AL-L3_CCL(config-if)#description native vlan interface
 GB-AL-L3_CCL(config-if)#ip address 192.168.84.204 255.255.255.240
 GB-AL-L3_CCL(config-if)#no shutdown
+```
 
-//Switchports VLAN Assignment
+**Switchports VLAN Assignment**
+```
 GB-AL-L2S2_AL(config)#interface fastEthernet 0/1
 GB-AL-L2S2_AL(config-if)#switchport mode access
 GB-AL-L2S2_AL(config-if)#switchport access vlan 160
@@ -79,8 +88,10 @@ GB-AL-L2S2_AL(config)#interface fastEthernet 0/4
 GB-AL-L2S2_AL(config-if)#switchport mode access
 GB-AL-L2S2_AL(config-if)#switchport access vlan 176
 GB-AL-L2S2_AL(config-if)#exit
+```
 
-//Trunk Configuration
+**Trunk Configuration**
+```
 GB-AL-L2S2_AL(config)#interface range fastEthernet 0/23-24
 GB-AL-L2S2_AL(config-if-range)#switchport mode trunk
 GB-AL-L2S2_AL(config-if-range)#switchport trunk native vlan 200
@@ -94,9 +105,12 @@ GB-AL-L2S2_AL(config-if-range)#switchport trunk native vlan 200
 GB-AL-L2S2_AL(config-if-range)#switchport trunk allowed vlan 50-200
 GB-AL-L2S2_AL(config-if-range)#switchport nonegotiate
 GB-AL-L2S2_AL(config-if-range)#exit
+```
 
-//STP Configuration
+**STP Configuration**
+```
 GB-CA-L2S1_AL(config)#spanning-tree mode pvst
 GB-CA-L2S1_AL(config)#interface range fastEthernet 0/1-4
 GB-CA-L2S1_AL(config-if-range)#spanning-tree portfast
 GB-CA-L2S1_AL(config-if-range)#spanning-tree bpduguard enable
+```

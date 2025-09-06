@@ -1,9 +1,14 @@
-//Startup Configuration
+#### GB-NY-L3S1_AL Device Configurations ⚙️
+
+**Startup Configuration**
+```
 Switch>enable
 Switch#configure terminal
 Switch(config)#hostname GB-NY-L3S1_AL
+```
 
-//Vlan Configuration
+**Vlan Configuration**
+```
 GB-NY-L3S1_AL(config)#vlan 50
 GB-NY-L3S1_AL(config-vlan)#name management
 GB-NY-L3S1_AL(config-vlan)#vlan 100
@@ -20,8 +25,10 @@ GB-NY-L3S1_AL(config-vlan)#vlan 176
 GB-NY-L3S1_AL(config-vlan)#name hr
 GB-NY-L3S1_AL(config-vlan)#vlan 200
 GB-NY-L3S1_AL(config-vlan)#name native
+```
 
-//Trunk Configuration
+**Trunk Configuration**
+```
 GB-NY-L3S1_AL(config)#interface range gigabitEthernet 1/0/23-24
 GB-NY-L3S1_AL(config-if-range)#switchport mode trunk
 GB-NY-L3S1_AL(config-if-range)#switchport trunk native vlan 200
@@ -34,15 +41,19 @@ GB-NY-L3S1_AL(config-if)#switchport mode trunk
 GB-NY-L3S1_AL(config-if)#switchport trunk native vlan 200
 GB-NY-L3S1_AL(config-if)#switchport trunk allowed vlan 50-200
 GB-NY-L3S1_AL(config-if)#switchport nonegotiate
+```
 
-//Port Channel Configuration
+**Port Channel Configuration**
+```
 GB-CA-L2S1_AL(config)#interface port-channel 1
 GB-CA-L2S1_AL(config-if)#switchport mode trunk
 GB-CA-L2S1_AL(config-if)#switchport trunk native vlan 200
 GB-CA-L2S1_AL(config-if)#switchport trunk allowed vlan 50-200
 GB-CA-L2S1_AL(config-if)#switchport nonegotiate
+```
 
-//Inter-VLAN Routing Configuration
+**Inter-VLAN Routing Configuration**
+```
 GB-CA-L3S2_DL(config)#ip routing
 GB-CA-L3S2_DL(config)#interface vlan 50
 GB-CA-L3S2_DL(config-if)#description management vlan interface
@@ -83,8 +94,10 @@ GB-CA-L3S2_DL(config)#interface vlan 200
 GB-CA-L3S2_DL(config-if)#description native vlan interface
 GB-CA-L3S2_DL(config-if)#ip address 172.16.8.205 255.255.255.240
 GB-CA-L3S2_DL(config-if)#no shutdown
+```
 
-//Assigning VLANS for Switchports
+**Assigning VLANS for Switchports**
+```
 GB-NY-L3S1_AL(config)#interface gigabitEthernet 1/0/1
 GB-NY-L3S1_AL(config-if)#switchport mode access
 GB-NY-L3S1_AL(config-if)#switchport access vlan 50
@@ -97,4 +110,5 @@ GB-NY-L3S1_AL(config-if)#switchport access vlan 100
 GB-NY-L3S1_AL(config-if)#interface gigabitEthernet 1/0/4
 GB-NY-L3S1_AL(config-if)#switchport mode access
 GB-NY-L3S1_AL(config-if)#switchport access vlan 150
+```
 

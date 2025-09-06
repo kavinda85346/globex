@@ -1,9 +1,14 @@
-//Startup Configuration
+#### GB-CA-L3S1_DL Device Configurations ⚙️
+
+**Startup Configuration**
+```
 Switch>enable
 Switch#configure terminal
 Switch(config)#hostname GB-CA-L3S1_DL
+```
 
-//Vlan Configuration
+**Vlan Configuration**
+```
 GB-CA-L3S1_DL(config)#vlan 50
 GB-CA-L3S1_DL(config-vlan)#name management
 GB-CA-L3S1_DL(config-vlan)#vlan 100
@@ -20,8 +25,10 @@ GB-CA-L3S1_DL(config-vlan)#vlan 176
 GB-CA-L3S1_DL(config-vlan)#name hr
 GB-CA-L3S1_DL(config-vlan)#vlan 200
 GB-CA-L3S1_DL(config-vlan)#name native
+```
 
-//Switchports VLAN Assignment
+**Switchports VLAN Assignment**
+```
 GB-CA-L3S1_DL(config)#interface fastEthernet 0/1
 GB-CA-L3S1_DL(config-if)#switchport mode access
 GB-CA-L3S1_DL(config-if)#switchport access vlan 8
@@ -44,8 +51,10 @@ GB-CA-L3S1_DL(config-if)#switchport access vlan 36
 GB-CA-L3S1_DL(config)#interface range fastEthernet 0/6-24
 GB-CA-L3S1_DL(config-if)#switchport mode access
 GB-CA-L3S1_DL(config-if)#switchport access vlan 40
+```
 
-//Trunk Configuration
+**Trunk Configuration**
+```
 GB-CA-L3S1_DL(config)#interface range gigabitEthernet 1/0/21-22
 GB-CA-L3S1_DL(config-if-range)#switchport mode trunk
 GB-CA-L3S1_DL(config-if-range)#switchport trunk native vlan 200
@@ -72,8 +81,10 @@ GB-CA-L3S1_DL(config-if)#switchport mode trunk
 GB-CA-L3S1_DL(config-if)#switchport trunk native vlan 200
 GB-CA-L3S1_DL(config-if)#switchport trunk allowed vlan 50-200
 GB-CA-L3S1_DL(config-if)#switchport nonegotiate
+```
 
-//Port Channel Configuration
+**Port Channel Configuration**
+```
 GB-CA-L3S1_DL(config)#interface port-channel 4
 GB-CA-L3S1_DL(config-if)#switchport mode trunk
 GB-CA-L3S1_DL(config-if)#switchport trunk native vlan 200
@@ -92,8 +103,10 @@ GB-CA-L3S1_DL(config-if)#switchport trunk native vlan 200
 GB-CA-L3S1_DL(config-if)#switchport trunk allowed vlan 50-200
 GB-CA-L3S1_DL(config-if)#switchport nonegotiate
 GB-CA-L3S1_DL(config-if)#exit
+```
 
-//Inter-VLAN Routing Configuration
+**Inter-VLAN Routing Configuration**
+```
 GB-CA-L3S1_DL(config)#ip routing
 GB-CA-L3S1_DL(config)#interface vlan 50
 GB-CA-L3S1_DL(config-if)#description management vlan interface
@@ -134,9 +147,12 @@ GB-CA-L3S1_DL(config)#interface vlan 200
 GB-CA-L3S1_DL(config-if)#description native vlan interface
 GB-CA-L3S1_DL(config-if)#ip address 10.5.2.205 255.255.255.240
 GB-CA-L3S1_DL(config-if)#no shutdown
+```
 
-//STP Configuration
+**STP Configuration**
+```
 GB-CA-L3S1_DL(config)#spanning-tree mode pvst
+```
 
 
 

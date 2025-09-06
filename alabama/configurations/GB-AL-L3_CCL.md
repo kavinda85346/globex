@@ -1,4 +1,7 @@
-//Startup Configuration
+#### GB-AL-L3_CCL Device Configurations ⚙️
+
+**Startup Configuration**
+```
 Switch>enable
 Switch#configure terminal
 Switch(config)#hostname GB-AL-L3_CCL
@@ -11,8 +14,10 @@ GB-AL-L3_CCL(config-if)#interface gigabitEthernet 1/1/2
 GB-AL-L3_CCL(config-if)#no switchport
 GB-AL-L3_CCL(config-if)#ip address 200.100.50.9 255.255.255.248
 GB-AL-L3_CCL(config-if)#no shutdown
+```
 
-//Vlan Configuration
+**Vlan Configuration**
+```
 GB-AL-L3_CCL(config)#vlan 50
 GB-AL-L3_CCL(config-vlan)#name management
 GB-AL-L3_CCL(config-vlan)#vlan 100
@@ -29,8 +34,10 @@ GB-AL-L3_CCL(config-vlan)#vlan 176
 GB-AL-L3_CCL(config-vlan)#name hr
 GB-AL-L3_CCL(config-vlan)#vlan 200
 GB-AL-L3_CCL(config-vlan)#name native
+```
 
-//VLAN Interface Configuration
+**VLAN Interface Configuration**
+```
 GB-AL-L3_CCL(config)#interface vlan 50
 GB-AL-L3_CCL(config-if)#description management vlan interface
 GB-AL-L3_CCL(config-if)#ip address 192.168.84.30 255.255.255.224
@@ -70,8 +77,10 @@ GB-AL-L3_CCL(config)#interface vlan 200
 GB-AL-L3_CCL(config-if)#description native vlan interface
 GB-AL-L3_CCL(config-if)#ip address 192.168.84.206 255.255.255.240
 GB-AL-L3_CCL(config-if)#no shutdown
+```
 
-//DHCP Pool Configuration
+**DHCP Pool Configuration**
+```
 GB-AL-L3_CCL(config)#ip dhcp excluded-address 192.168.84.28 192.168.84.30
 GB-AL-L3_CCL(config)#ip dhcp excluded-address 192.168.84.60 192.168.84.62
 GB-AL-L3_CCL(config)#ip dhcp excluded-address 192.168.84.92 192.168.84.94
@@ -104,15 +113,19 @@ GB-AL-L3_CCL(dhcp-config)#default-router 192.168.84.190
 GB-AL-L3_CCL(dhcp-config)#ip dhcp pool native
 GB-AL-L3_CCL(dhcp-config)#network 192.168.84.192 255.255.255.240
 GB-AL-L3_CCL(dhcp-config)#default-router 192.168.84.206
+```
 
-\\Activating the interface
+**Activating the interface**
+```
 GB-AL-R_CCL(config)#interface gigabitEthernet 4/0
 GB-AL-R_CCL(config-if)#no shutdown 
 GB-AL-R_CCL(config-if)#exit
 GB-AL-R_CCL(config)#interface gigabitEthernet 5/0
 GB-AL-R_CCL(config-if)#no shutdown
+```
 
-\\OSPF 
+**OSPF Configuration**
+```
 GB-AL-L3_CCL(config)#router ospf 1
 GB-AL-L3_CCL(config-router)#router-id 2.2.2.2
 GB-AL-L3_CCL(config-router)#network 200.100.50.0 0.0.0.7 area 0
@@ -124,8 +137,10 @@ GB-AL-L3_CCL(config)#interface gigabitEthernet 1/1/1
 GB-AL-L3_CCL(config)#ip ospf 1 area 0
 GB-AL-L3_CCL(config)#interface gigabitEthernet 1/1/2
 GB-AL-L3_CCL(config)#ip ospf 1 area 1
+```
 
-//HSRP Configuration
+**HSRP Configuration**
+```
 GB-AL-L3_CCL(config)#interface gigabitEthernet 1/1/1
 GB-AL-L3_CCL(config-if)#standby 1 ip 200.100.50.3
 GB-AL-L3_CCL(config-if)#standby 1 priority 100
@@ -135,3 +150,4 @@ GB-AL-L3_CCL(config)#interface gigabitEthernet 1/1/2
 GB-AL-L3_CCL(config-if)#standby 2 ip 200.100.50.11
 GB-AL-L3_CCL(config-if)#standby 2 priority 110
 GB-AL-L3_CCL(config-if)#standby 2 preempt
+```
