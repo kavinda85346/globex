@@ -4,18 +4,6 @@ This is a network infrasture enchancement project.
 
 ---
 
-## 📖 Table of Contents
-
-- [👋 Introdution](#introduction)
-- [🗺️ Logical Topology](#logical-topology)
-- [📁 Project Structure](#project-structure)
-- [🛠 Tech Stack](#tech-stack)
-- [🚀 Installation](#installation)
-- [💻 Useage](#useage)
-- [🧑‍💻 Author](#author)
-
----
-
 ## 👋 Introduction
 
 Globex is a multinational retail corporation which sells goods to many customers all around the globe and braches of Globex are located all around the globe. Recently there has been a scale up of customers at Alabama, California and Newyork states. In order to meet the demands of the growing customers of the corresponding states, current network infratructure was not sufficent. So the CTO of Globex decided to scale up the network infrastucture of the Alabama, California and Newyork braches. Alabama, California and Newyork folders contains network device configurations that belongs to the network equipment of those branches and the list of networking gears of those sites.
