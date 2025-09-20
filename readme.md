@@ -71,6 +71,5 @@ globex/
 
 Kavinda Kethiya Rajapaksha
 
-- GitHub: your-username
-- LinkedIn: your-linkedin
-- Email: your.email@example.com
+- LinkedIn: www.linkedin.com/in/kavinda-rajapaksha-65034333a
+- Email: kr4722296@gmail.com
